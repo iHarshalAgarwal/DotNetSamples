@@ -64,6 +64,9 @@ namespace Web.Startup
 				// set code_challenge parameter on authorization request
 				context.ProtocolMessage.SetParameter( "code_challenge", codeChallenge );
 				context.ProtocolMessage.SetParameter( "code_challenge_method", "S256" );
+				
+				// if you want to bypass the keycloak login page
+				context.ProtocolMessage.SetParameter( "kc_idp_hint", "YOUR_IDENTITY_PROVIDER_ALIAS" );
 			}
 
 			// this will set dynamic redirect uri
